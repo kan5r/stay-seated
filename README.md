@@ -4,7 +4,7 @@ Training code for **Stay Seated: Learning Omnidirectional Humanoid Locomotion on
 Chair with Casters** (IEEE-RAS Humanoids 2026). A Unitree G1 sits on a passive chair with casters and
 moves in any direction by pushing the floor with its feet.
 
-[Paper (arXiv)](https://arxiv.org/abs/2608.28090) | [Project page](TODO)
+[Paper (arXiv)](https://arxiv.org/abs/2608.28090) | [Project page](https://kan5r.github.io/stay-seated/)
 
 ## Installation
 
@@ -46,10 +46,10 @@ log locally with TensorBoard instead.
 
 ```bibtex
 @inproceedings{yanagida2026stayseated,
-  title     = {Stay Seated: Learning Omnidirectional Humanoid Locomotion on a Passive Mobile Chair with Casters},
-  author    = {Yanagida, Kango and Miyazawa, Kazuki and Horii, Takato},
-  booktitle = {IEEE-RAS International Conference on Humanoid Robots (Humanoids)},
-  year      = {2026}
+  title={Stay Seated: Learning Omnidirectional Humanoid Locomotion on a Passive Mobile Chair with Casters},
+  author={Yanagida, Kango and Miyazawa, Kazuki and Horii, Takato},
+  booktitle={2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)},
+  year={2026}
 }
 ```
 
