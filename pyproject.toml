@@ -24,6 +24,8 @@ dependencies = [
 stay_seated = "stay_seated.tasks"
 
 [tool.uv]
+# Resolve dependencies as of the paper experiments (mjlab 1.5.2 era).
+exclude-newer = "2026-07-20T00:00:00Z"
 required-environments = [
   "sys_platform == 'linux' and platform_machine == 'x86_64'",
 ]
