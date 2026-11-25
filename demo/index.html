@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stay Seated — Interactive Demo</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; font-family: "Google Sans", "Noto Sans", Arial, sans-serif; background: #f4f5f7; }
+    #app { position: fixed; inset: 0; }
+    #status { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 12px 18px; background: rgba(255,255,255,0.95); border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); color: #333; z-index: 20; }
+    .panel { position: fixed; background: rgba(255,255,255,0.92); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); padding: 12px 14px; z-index: 10; color: #222; font-size: 13px; }
+    #help { top: 12px; left: 12px; line-height: 1.6; }
+    #help b { display: block; font-size: 14px; margin-bottom: 4px; }
+    kbd { background: #f0f1f4; border: 1px solid #d5d8de; border-bottom-width: 2px; border-radius: 5px; padding: 0 6px; font-family: inherit; font-size: 12px; }
+    #hud { top: 12px; right: 12px; width: 220px; }
+    .row { display: grid; grid-template-columns: 34px 1fr 44px; align-items: center; gap: 8px; margin: 4px 0; }
+    .track { position: relative; height: 8px; background: #e6e8ec; border-radius: 4px; }
+    .track::after { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 14px; background: #9aa1ad; }
+    .fill { position: absolute; top: 0; height: 100%; background: #1d4ed8; border-radius: 4px; }
+    .val { text-align: right; font-variant-numeric: tabular-nums; }
+    .btns { display: flex; gap: 8px; margin-top: 8px; }
+    button { font: inherit; border: 1px solid #d5d8de; background: #fff; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+    button:hover { background: #f3f4f6; }
+    #pad { bottom: 14px; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(2, 44px); gap: 6px; padding: 10px; user-select: none; touch-action: none; }
+    #pad button { padding: 0; font-size: 18px; }
+    #pad button.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+    .note { font-size: 11px; color: #666; margin-top: 6px; }
+    @media (max-width: 700px) { #help { display: none; } #hud { width: 180px; } }
+  </style>
+  <script type="module" crossorigin src="./assets/index-CE1Gb72x.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="status">Loading…</div>
+  <div id="help" class="panel">
+    <b>Drive the seated G1</b>
+    <kbd>W</kbd>/<kbd>S</kbd> forward / backward<br>
+    <kbd>A</kbd>/<kbd>D</kbd> left / right<br>
+    <kbd>Q</kbd>/<kbd>E</kbd> turn left / right<br>
+    Hold <kbd>Shift</kbd> for 1.0 m/s<br>
+    <kbd>R</kbd> reset &nbsp; <kbd>Space</kbd> pause<br>
+    Drag to orbit, scroll to zoom.
+    <div class="note">Policy runs in your browser (MuJoCo WebAssembly).<br>Proprioception + velocity command only.</div>
+  </div>
+  <div id="hud" class="panel">
+    <div class="row"><span>v<sub>x</sub></span><div class="track"><div class="fill" id="bar-vx"></div></div><span class="val" id="val-vx">0.00</span></div>
+    <div class="row"><span>v<sub>y</sub></span><div class="track"><div class="fill" id="bar-vy"></div></div><span class="val" id="val-vy">0.00</span></div>
+    <div class="row"><span>ω<sub>z</sub></span><div class="track"><div class="fill" id="bar-wz"></div></div><span class="val" id="val-wz">0.00</span></div>
+    <div class="note">Command: m/s, m/s, rad/s</div>
+    <div class="btns"><button id="reset">Reset</button><button id="pause">Pause</button></div>
+  </div>
+  <div id="pad" class="panel">
+    <button data-cmd="wz:1" title="Turn left">⟲</button>
+    <button data-cmd="vx:1" title="Forward">▲</button>
+    <button data-cmd="wz:-1" title="Turn right">⟳</button>
+    <button data-cmd="vy:1" title="Left">◀</button>
+    <button data-cmd="vx:-1" title="Backward">▼</button>
+    <button data-cmd="vy:-1" title="Right">▶</button>
+  </div>
+</body>
+</html>

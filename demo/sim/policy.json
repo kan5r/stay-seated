@@ -1,0 +1,181 @@
+{
+ "layout": {
+  "obs_normalizer._mean": {
+   "offset": 0,
+   "n": 96,
+   "dims": [
+    1,
+    96
+   ]
+  },
+  "onnx::Div_24": {
+   "offset": 96,
+   "n": 96,
+   "dims": [
+    1,
+    96
+   ]
+  },
+  "mlp.0.weight": {
+   "offset": 192,
+   "n": 49152,
+   "dims": [
+    512,
+    96
+   ]
+  },
+  "mlp.0.bias": {
+   "offset": 49344,
+   "n": 512,
+   "dims": [
+    512
+   ]
+  },
+  "mlp.2.weight": {
+   "offset": 49856,
+   "n": 131072,
+   "dims": [
+    256,
+    512
+   ]
+  },
+  "mlp.2.bias": {
+   "offset": 180928,
+   "n": 256,
+   "dims": [
+    256
+   ]
+  },
+  "mlp.4.weight": {
+   "offset": 181184,
+   "n": 32768,
+   "dims": [
+    128,
+    256
+   ]
+  },
+  "mlp.4.bias": {
+   "offset": 213952,
+   "n": 128,
+   "dims": [
+    128
+   ]
+  },
+  "mlp.6.weight": {
+   "offset": 214080,
+   "n": 3712,
+   "dims": [
+    29,
+    128
+   ]
+  },
+  "mlp.6.bias": {
+   "offset": 217792,
+   "n": 29,
+   "dims": [
+    29
+   ]
+  }
+ },
+ "joint_names": [
+  "left_hip_pitch_joint",
+  "left_hip_roll_joint",
+  "left_hip_yaw_joint",
+  "left_knee_joint",
+  "left_ankle_pitch_joint",
+  "left_ankle_roll_joint",
+  "right_hip_pitch_joint",
+  "right_hip_roll_joint",
+  "right_hip_yaw_joint",
+  "right_knee_joint",
+  "right_ankle_pitch_joint",
+  "right_ankle_roll_joint",
+  "waist_yaw_joint",
+  "waist_roll_joint",
+  "waist_pitch_joint",
+  "left_shoulder_pitch_joint",
+  "left_shoulder_roll_joint",
+  "left_shoulder_yaw_joint",
+  "left_elbow_joint",
+  "left_wrist_roll_joint",
+  "left_wrist_pitch_joint",
+  "left_wrist_yaw_joint",
+  "right_shoulder_pitch_joint",
+  "right_shoulder_roll_joint",
+  "right_shoulder_yaw_joint",
+  "right_elbow_joint",
+  "right_wrist_roll_joint",
+  "right_wrist_pitch_joint",
+  "right_wrist_yaw_joint"
+ ],
+ "default_joint_pos": [
+  -1.4,
+  0.0,
+  0.0,
+  1.222,
+  0.2,
+  0.0,
+  -1.4,
+  0.0,
+  0.0,
+  1.222,
+  0.2,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  -0.2,
+  0.2,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  -0.2,
+  -0.2,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "action_scale": [
+  0.548,
+  0.351,
+  0.548,
+  0.351,
+  0.439,
+  0.439,
+  0.548,
+  0.351,
+  0.548,
+  0.351,
+  0.439,
+  0.439,
+  0.548,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.075,
+  0.075,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.439,
+  0.075,
+  0.075
+ ],
+ "observation_names": [
+  "base_ang_vel",
+  "projected_gravity",
+  "joint_pos",
+  "joint_vel",
+  "actions",
+  "command"
+ ]
+}

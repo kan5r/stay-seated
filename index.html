@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Stay Seated: Learning Omnidirectional Humanoid Locomotion on a Passive Mobile Chair with Casters (Humanoids 2026)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stay Seated</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .link-block a.is-coming-soon { opacity: 0.45; pointer-events: none; }
+    .note-text { color: #666; font-size: 0.95rem; text-align: center; margin-top: 1.2rem; }
+    .figure-caption { color: #555; font-size: 0.95rem; text-align: center; margin-top: 0.8rem; }
+    .two-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  </style>
+</head>
+
+<body>
+  <!-- Hero: real-robot footage with title overlay -->
+  <section class="hero is-link is-fullheight video" style="overflow: hidden; position: relative;">
+    <div class="hero-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
+      <video playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div style="position: absolute; bottom: 20px; left: 20px; color: white; padding: 10px 15px; border-radius: 8px; font-size: 1.2rem; z-index: 10; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+      <div style="margin-bottom: 5px;">Real robot, real time (1x).</div>
+      <div>Zero-shot sim-to-real on a Unitree G1.</div>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+          Stay Seated
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+          Learning Omnidirectional Humanoid Locomotion<br>on a Passive Mobile Chair with Casters
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authors, venue, links -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-fullhd">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Kango Yanagida<sup>1</sup>,</span>
+              <span class="author-block">Kazuki Miyazawa<sup>1</sup>,</span>
+              <span class="author-block">Takato Horii<sup>1,2</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Osaka,</span>
+              <span class="author-block"><sup>2</sup>The University of Tokyo (IRCN)</span>
+            </div>
+
+            <h3 class="title is-4 conference-authors" style="margin-top: 1.5rem;"><span style="color: firebrick;">Humanoids 2026</span></h3>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: replace href with the arXiv URL -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-coming-soon" title="Coming soon">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- TODO: replace href with the arXiv PDF URL -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-coming-soon" title="Coming soon">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- TODO: replace href with the YouTube URL -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-coming-soon" title="Coming soon">
+                    <span class="icon"><i class="fab fa-youtube"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive MuJoCo demo (removed on mobile by static/js/index.js) -->
+  <section class="section interactive-demo-section">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center; margin-bottom: 1.5rem;">Interactive Demo</h2>
+      <p class="has-text-centered" style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #555;">
+        Drive the seated Unitree G1 with the learned policy, running fully in your browser with MuJoCo WebAssembly.
+      </p>
+      <p class="has-text-centered" style="font-size: 0.95rem; margin-bottom: 1.5rem; color: #777;">
+        <kbd>W</kbd>/<kbd>S</kbd> forward/backward, <kbd>A</kbd>/<kbd>D</kbd> left/right, <kbd>Q</kbd>/<kbd>E</kbd> turn. Click the simulation first to give it keyboard focus. Loading takes a few seconds.
+      </p>
+      <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+        <a class="button is-link is-rounded" href="./demo/index.html" target="_blank">Open the demo in a new tab</a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); border-radius: 10px; overflow: hidden;">
+            <iframe src="./demo/index.html" loading="lazy" style="width: 100%; height: 600px; border: none; display: block;" title="Stay Seated interactive demo"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results: omnidirectional seated locomotion -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">Omnidirectional seated locomotion on a real Unitree G1</h2>
+      <div class="simulation-grid desktop-grid two-grid">
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/forward.mp4"></video>
+          <p class="simulation-label">Forward</p>
+        </div>
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/backward.mp4"></video>
+          <p class="simulation-label">Backward</p>
+        </div>
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/leftward.mp4"></video>
+          <p class="simulation-label">Leftward</p>
+        </div>
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/turning.mp4"></video>
+          <p class="simulation-label">Translation + Turning</p>
+        </div>
+      </div>
+
+      <div id="results-carousel-mobile" class="carousel results-carousel mobile-carousel">
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/forward.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/backward.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/leftward.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/turning.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+      </div>
+      <p class="note-text">All robot videos are real-world and real-time (1x). The policy uses only proprioception and velocity commands.</p>
+    </div>
+  </section>
+
+  <!-- Additional demonstration -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">15-m hallway traversals alongside a seated human</h2>
+      <div class="simulation-grid desktop-grid two-grid">
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/hallway_forward.mp4"></video>
+          <p class="simulation-label">Forward</p>
+        </div>
+        <div class="simulation-item">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/hallway_backward.mp4"></video>
+          <p class="simulation-label">Backward</p>
+        </div>
+      </div>
+
+      <div id="results-carousel-mobile-2" class="carousel results-carousel mobile-carousel">
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/hallway_forward.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+        <div class="column is-full-width is-centered has-text-centered">
+          <video controls loop muted playsinline autoplay preload="metadata" src="./static/videos/hallway_backward.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        </div>
+      </div>
+      <p class="note-text">Additional demonstration not reported in the paper. The person behind the robot served only as a safety spotter; no pulling or postural assistance was provided.</p>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">Abstract</h2>
+      <div class="content has-text-justified">
+        <p class="abstract-text" style="font-size: 0.95rem; line-height: 1.5;">
+          Humanoid robots with quasi-direct-drive actuators continuously generate joint torque while standing, whereas seated humans delegate weight support to chairs during desk work. As a first step toward seated loco-manipulation, we study omnidirectional seated locomotion on a passive mobile chair with casters, a robot&ndash;chair&ndash;floor system that requires unfixed pelvis&ndash;seat contact and intermittent foot&ndash;floor propulsion of the robot and chair. We ask whether this task can be learned by minimally extending a standard standing velocity-tracking environment, adding only a passive-chair model, seated-state rewards, critic-only chair observations, and pelvis&ndash;seat contact settings. The policy is learned without motion references, and its actor uses only proprioception and velocity commands. In random-command evaluation, the policies tracked omnidirectional commands through nearly all 20-s rollouts with accuracy comparable to a standing locomotion policy. Comparing symmetry regularization (SY), foot-slip penalty (FS), and command curriculum (CC) showed that FS reduced the cost of transport (CoT) but increased tracking error, and that some FS-only policies converged to stationary local optima under diagonal-forward commands. Adding either SY or CC avoided these local optima. CC first learns low-speed propulsion, where smaller foot forces suffice to propel without slipping, and then expands the command range. SY further reduced the left&ndash;right bias in leg use that otherwise persisted, likely because the chair supports the body. Direction-resolved analysis showed CoT ordered backward &lt; lateral &#8810; forward, with planted-leg extension in backward and lateral motion and knee flexion following heel contact in forward motion. The learned policy achieved zero-shot sim-to-real transfer to a Unitree G1.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">Method</h2>
+      <div style="text-align: center;">
+        <img src="./static/images/method.png" class="interpolation-image" style="width: 80%; height: auto;" alt="Overview of the seated locomotion learning framework"/>
+      </div>
+      <p class="figure-caption">Overview of the seated locomotion learning framework, including the asymmetric actor&ndash;critic architecture, refined pelvis collision mesh, and passive-chair model. The full-factorial study varies command curriculum (CC), symmetry regularization (SY), and foot-slip penalty (FS).</p>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section class="section" id="Citation">
+    <div class="container">
+      <h2 class="title is-2" style="text-align: center;">Citation</h2>
+      <div class="content">
+        <pre><code>@inproceedings{yanagida2026stayseated,
+  title={Stay Seated: Learning Omnidirectional Humanoid Locomotion on a Passive Mobile Chair with Casters},
+  author={Yanagida, Kango and Miyazawa, Kazuki and Horii, Takato},
+  booktitle={2026 IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids)},
+  year={2026}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> and <a href="https://php-parkour.github.io/">Perceptive Humanoid Parkour</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
